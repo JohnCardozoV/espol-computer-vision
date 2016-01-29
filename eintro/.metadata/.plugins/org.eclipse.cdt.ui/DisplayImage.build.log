@@ -1,0 +1,54 @@
+19:58:12 **** Incremental Build of configuration Debug for project DisplayImage ****
+make all 
+Building file: ../DisplayImage.cpp
+Apple LLVM version 7.0.0 (clang-700.1.76)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.11.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -main-file-name DisplayImage.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -masm-verbose -munwind-tables -target-cpu core2 -target-linker-version 253.6 -v -gdwarf-2 -dwarf-column-info -coverage-file /Users/john/dev/opencv/eintro/DisplayImage/Debug/DisplayImage.o -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0 -dependency-file DisplayImage.d -MP -MT DisplayImage.o -I /usr/local/include/opencv -stdlib=libc++ -O0 -Wall -fdeprecated-macro -fdebug-compilation-dir /Users/john/dev/opencv/eintro/DisplayImage/Debug -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -mstackrealign -fblocks -fobjc-runtime=macosx-10.11.0 -fencode-extended-block-signature -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o DisplayImage.o -x c++ ../DisplayImage.cpp
+Invoking: Cross G++ Compiler
+g++ -I/usr/local/include/opencv -O0 -g3 -Wall -c -fmessage-length=0 -v -MMD -MP -MF"DisplayImage.d" -MT"DisplayImage.o" -o "DisplayImage.o" "../DisplayImage.cpp"
+clang -cc1 version 7.0.0 based upon LLVM 3.7.0svn default target x86_64-apple-darwin15.2.0
+ignoring nonexistent directory "/usr/include/c++/v1"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/local/include/opencv
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1
+ /usr/local/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+ /usr/include
+ /System/Library/Frameworks (framework directory)
+ /Library/Frameworks (framework directory)
+End of search list.
+../DisplayImage.cpp:7:14: error: use of undeclared identifier 'imread'; did you mean 'read'?
+        Mat image = imread(argv[1], 1);
+                    ^~~~~~
+                    read
+/usr/include/unistd.h:471:10: note: 'read' declared here
+ssize_t  read(int, void *, size_t) __DARWIN_ALIAS_C(read);
+         ^
+../DisplayImage.cpp:7:14: error: too few arguments to function call, expected 3, have 2; did you mean 'cv::read'?
+        Mat image = imread(argv[1], 1);
+                    ^~~~~~
+                    cv::read
+/usr/local/include/opencv2/core/persistence.hpp:675:17: note: 'cv::read' declared here
+CV_EXPORTS void read(const FileNode& node, int& value, int default_value);
+                ^
+../DisplayImage.cpp:14:2: error: use of undeclared identifier 'namedWindow'; did you mean 'cvNamedWindow'?
+        namedWindow("Display Image", CV_WINDOW_AUTOSIZE);
+        ^~~~~~~~~~~
+        cvNamedWindow
+/usr/local/include/opencv2/highgui/highgui_c.h:127:12: note: 'cvNamedWindow' declared here
+CVAPI(int) cvNamedWindow( const char* name, int flags CV_DEFAULT(CV_WINDOW_AUTOSIZE) );
+           ^
+../DisplayImage.cpp:15:2: error: use of undeclared identifier 'imshow'
+        imshow("Display Image", image);
+        ^
+../DisplayImage.cpp:17:2: error: use of undeclared identifier 'waitKey'
+        waitKey(0);
+        ^
+5 errors generated.
+make: *** [DisplayImage.o] Error 1
+
+19:58:12 Build Finished (took 809ms)
+

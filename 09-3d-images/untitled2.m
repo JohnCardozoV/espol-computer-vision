@@ -1,0 +1,1 @@
+A = rand(50, 50, 50) < 0.01;  % synthetic data
